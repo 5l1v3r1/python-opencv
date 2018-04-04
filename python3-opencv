@@ -1,0 +1,21 @@
+OpenCV (v3.3.1) with ENABLE_VFPV3=ON and ENABLE_NEON=ON.
+
+sudo apt-get install -y --install-recommends python-pip python-numpy python3-pip python3-numpy
+wget http://ftp.debian.org/debian/pool/main/j/jasper/libjasper-dev_1.900.1-debian1-2.4+deb8u3_armhf.deb
+wget http://ftp.debian.org/debian/pool/main/j/jasper/libjasper1_1.900.1-debian1-2.4+deb8u3_armhf.deb
+wget https://github.com/mt08xx/files/raw/master/opencv-rpi/libopencv3_3.3.1-TinkerBoard-20171129.1_armhf.deb
+sudo apt install ./libjasper*.deb ./libopencv3*.deb --install-recommends -y
+sudo ldconfig
+
+
+
+linaro@tinkerboard:~$ uname -a  ## TinkerOS 2.0.3 - 20170928-tinker-board-linaro-stretch-alip-v2.0.3.img.zip
+Linux tinkerboard 4.4.71+ #1 SMP Thu Sep 28 00:28:12 CST 2017 armv7l GNU/Linux
+linaro@tinkerboard:~$ python3
+Python 3.5.3 (default, Jan 19 2017, 14:11:04) 
+[GCC 6.3.0 20170118] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import cv2
+>>> cv2.__version__
+'3.3.1'
+>>>

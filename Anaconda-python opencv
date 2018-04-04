@@ -1,0 +1,8 @@
+
+Anaconda installation for opencv for python 2 and python3 seems same for all the versions 
+
+I have installed opencv by the below method in anaconda4.2
+
+python 3.5:
+
+ conda install -c menpo opencv 
