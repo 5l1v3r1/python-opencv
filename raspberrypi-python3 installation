@@ -1,0 +1,139 @@
+
+# Pwd by kribo tech
+
+
+#  Installation procedured for ThinkBig Lib Automation setup
+
+
+
+# Installation of opencv in client raspberry pi
+
+
+>>> open command prompt or terminal in the raspberry pi
+follow the steps
+
+-- sudo apt-get remove scratch scratch2
+-- sudo apt-get remove wolfram-engine wolframscript
+-- sudo apt-get purge libreoffice*
+-- sudo apt-get clean
+-- sudo apt-get autoremove
+
+
+-- sudo apt-get update
+-- sudo apt-get upgrade
+if error try
+-- sudo apt-get update --fix-missing
+-- sudo apt-get upgrade
+-- sudo shutdown -r now
+
+After restart do :
+
+<<< Installing open cv for python3 in raspberry pi
+
+-- cd ~
+-- sudo apt-get remove python3.4 python3.4-dev
+-- sudo apt-get install python3-numpy python3-scipy python3-matplotlib
+
+-- sudo apt-get install build-essential cmake pkg-config
+-- sudo apt-get install default-jdk ant
+
+if error :
+-- sudo apt-get purge openjdk-8-jre-headless
+-- sudo apt-get install openjdk-8-jre-headless
+-- sudo apt-get install openjdk-8-jre
+else:
+continue
+
+-- sudo apt-get install libgtkglext1-dev
+-- sudo apt-get install v4l-utils
+-- sudo apt-get install libjpeg8 \
+libjpeg8-dev \
+libjpeg8-dbg \
+libjpeg-progs \
+libavcodec-dev \
+libavformat-dev \
+libgstreamer0.10-0-dbg \
+libgstreamer0.10-0 \
+libgstreamer0.10-dev \
+libxine2-dev \
+libunicap2 \
+libunicap2-dev \
+swig \
+libv4l-0 \
+libv4l-dev \
+python3-numpy \
+libpython3.5 \
+python3-dev \
+python3.5-dev \
+libgtk2.0-dev \
+libjasper-dev \
+libpng-dev \
+libswscale-dev
+
+
+-- wget http://sourceforge.net/projects/opencvlibrary/files/opencv-unix/3.0.0/opencv-3.0.0.zip
+-- unzip opencv-3.0.0.zip
+-- cd opencv-3.0.0
+-- cd opencv-3.0.0
+-- mkdir build
+-- cd build
+-- cmake -D CMAKE_BUILD_TYPE=RELEASE \
+-D INSTALL_C_EXAMPLES=ON \
+-D INSTALL_PYTHON_EXAMPLES=ON \
+-D BUILD_EXAMPLES=ON \
+-D CMAKE_INSTALL_PREFIX=/usr/local \
+-D ENABLE_PRECOMPILED_HEADERS=OFF \
+-D WITH_V4L=ON ..
+
+-- sudo make
+-- sudo make install
+-- sudo nano /etc/ld.so.conf.d/opencv.conf
+
+# opencv.conf will be blank, add the following line, then save and exit nano:
+
+/usr/local/lib          # enter this in opencv.conf, NOT at the command line
+
+# press ctr+x and press y and click enter to save the process
+
+#copy the above the lines and in the editing dialogue press ctrl+shift+v and
+(leave a blank line at the end of opencv.conf)
+and continue the process
+
+-- sudo ldconfig
+-- sudo nano /etc/bash.bashrc
+
+
+# add the following lines at the bottom of bash.bashrc
+
+PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig       # enter these at the bottom of bash.bashrc, NOT at the command line
+export PKG_CONFIG_PATH                                          # enter these at the bottom of bash.bashrc, NOT at the command line
+(leave a blank line at the end of bash.bashrc)
+
+# press ctr+x and press y and click enter to save the process
+# save bash.bashrc changes, then back at the command line, reboot
+
+
+sudo shutdown -r now
+
+
+After all open terminal and type
+
+-- sudo python3
+
+in the scritp
+
+>> import cv2
+>> cv2.__version__
+
+check if there is no error if not your process sucess else try another time it takes about 5-6 hrs of time
+
+
+
+
+### Installation of netifaces
+
+
+open terminal and follow the procedure
+
+
+-- sudo apt-get install netifaces
