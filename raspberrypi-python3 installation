@@ -76,7 +76,6 @@ libswscale-dev
 -- wget http://sourceforge.net/projects/opencvlibrary/files/opencv-unix/3.0.0/opencv-3.0.0.zip
 -- unzip opencv-3.0.0.zip
 -- cd opencv-3.0.0
--- cd opencv-3.0.0
 -- mkdir build
 -- cd build
 -- cmake -D CMAKE_BUILD_TYPE=RELEASE \
@@ -86,6 +85,15 @@ libswscale-dev
 -D CMAKE_INSTALL_PREFIX=/usr/local \
 -D ENABLE_PRECOMPILED_HEADERS=OFF \
 -D WITH_V4L=ON ..
+
+-- cmake -D CMAKE_BUILD_TYPE=RELEASE \
+-D INSTALL_C_EXAMPLES=ON \
+-D INSTALL_PYTHON_EXAMPLES=ON \
+-D BUILD_EXAMPLES=ON \
+-D CMAKE_INSTALL_PREFIX=/usr/local \
+-D ENABLE_PRECOMPILED_HEADERS=OFF \
+-D WITH_V4L=ON 
+-D WITH_FFMPEG=OFF ..
 
 -- sudo make
 -- sudo make install
